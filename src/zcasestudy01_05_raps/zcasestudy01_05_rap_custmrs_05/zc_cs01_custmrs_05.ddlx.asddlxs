@@ -1,0 +1,158 @@
+@Metadata.layer: #CORE
+
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'Customerid'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'Company'
+
+annotate view ZC_CS01_CUSTMRS_05 with
+{
+  @UI.facet: [ {
+    label: 'General Information',
+    id: 'GeneralInfo',
+    purpose: #STANDARD,
+    position: 10,
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+
+  @EndUserText.label: 'Kundennummer'
+  @UI.identification: [ { position: 10 } ]
+  @UI.lineItem: [
+
+  { position: 10 },
+
+  {
+    type: #FOR_ACTION,
+    dataAction: 'cancelOrders',
+    label: 'Cancel Orders',
+    position: 5
+  },
+
+  {
+    type: #FOR_ACTION,
+    dataAction: 'showStatistic',
+    label: 'Show Statistic',
+    position: 6
+  }
+
+]
+  @UI.selectionField: [ { position: 10 } ]
+  Customerid;
+
+  @UI.identification: [ { position: 20 } ]
+  Salutation;
+
+
+@UI.identification: [ { position: 30 } ]
+@UI.lineItem: [ { position: 25 } ]
+@UI.selectionField: [ { position: 25 } ]
+LastName;
+
+
+@UI.identification: [ { position: 40 } ]
+@UI.lineItem: [ { position: 26 } ]
+@UI.selectionField: [ { position: 26 } ]
+FirstName;
+
+@UI.identification: [ { position: 50 } ]
+@UI.lineItem: [ { position: 20 } ]
+@UI.selectionField: [ { position: 20 } ]
+Company;
+
+  @UI.identification: [ { position: 60 } ]
+  Street;
+
+  @UI.identification: [ { position: 70 } ]
+  @UI.lineItem: [ { position: 30 } ]
+  City;
+
+  @UI.identification: [ { position: 80 } ]
+  @UI.lineItem: [ { position: 40 } ]
+  @UI.selectionField: [ { position: 30 } ]
+  Country;
+
+  @UI.identification: [ { position: 90 } ]
+  @UI.lineItem: [ { position: 50 } ]
+  @UI.selectionField: [ { position: 40 } ]
+  Postcode;
+
+  @UI.identification: [ { position: 100 } ]
+  AccLock;
+
+  @UI.identification: [ { position: 110 } ]
+  LastDate;
+
+  @UI.identification: [ { position: 120 } ]
+  SalesVolume;
+
+  @UI.identification: [ { position: 130 } ]
+  SalesVolumeTarget;
+
+  @UI.identification: [ { position: 140 } ]
+  ChangeRateDate;
+
+  @UI.identification: [ { position: 150 } ]
+  Fax;
+
+  @UI.identification: [ { position: 160 } ]
+  Phone;
+
+  @UI.identification: [ { position: 170 } ]
+  @UI.lineItem: [ { position: 60 } ]
+  Email;
+
+  @UI.identification: [
+  {
+    position: 180,
+    type: #WITH_URL,
+    url: 'Url'
+  }
+]
+@UI.lineItem: [
+  {
+    position: 70,
+    type: #WITH_URL,
+    url: 'Url'
+  }
+]
+Url;
+
+  @UI.identification: [ { position: 190 } ]
+  @UI.selectionField: [ { position: 50 } ]
+  Language;
+
+  @UI.identification: [ { position: 200 } ]
+  Weblogin;
+
+  @UI.identification: [ { position: 210 } ]
+  Webpw;
+
+  @UI.identification: [ { position: 220 } ]
+  Memo;
+
+  @UI.identification: [ { position: 230 } ]
+  CreatedBy;
+
+  @UI.identification: [ { position: 240 } ]
+  CreatedAt;
+
+  @UI.identification: [ { position: 250 } ]
+  LocalLastChangedBy;
+
+  @UI.identification: [ { position: 260 } ]
+  LocalLastChangedAt;
+
+  @UI.identification: [ { position: 270 } ]
+  LastChangedAt;
+
+  @EndUserText.label: 'Number of Orders'
+  @UI.identification: [ { position: 275 } ]
+  @UI.lineItem: [ { position: 80 } ]
+  OrderCount;
+
+  @EndUserText.label: 'VIP'
+  @UI.identification: [ { position: 280 } ]
+  @UI.lineItem: [ { position: 90 } ]
+  @UI.selectionField: [ { position: 60 } ]
+  ZZVIP;
+}

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZCS1_IMPORT_05</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>Import Messages</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCS1_IMPORT_05</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Feld &amp;1: Wert &amp;2 ist laenger als &amp;3 Zeichen und wurde gekürzt</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCS1_IMPORT_05</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Pflichtfeld &amp;1 ist leer (Zeile &amp;2)</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCS1_IMPORT_05</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>E-Mail &amp;1 ist syntaktisch ungültig</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCS1_IMPORT_05</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Zeile &amp;1 hat ein ungültiges Format und wurde übersprungen</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCS1_IMPORT_05</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Die Email-Adresse &amp;1 ist syntaktisch falsch, da en statt de genutzt wurde</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCS1_IMPORT_05</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Kein Umrechnungskurs von &amp;1 nach &amp;2 gepflegt</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,17 @@
+@EndUserText.label: 'Postcode Access Control'
+@MappingRole: true
+define role ZCS01PCODE_05 {
+    grant 
+        select
+            on
+                ZCS01_CUSTOMERS_R_05
+                    where
+                        (Postcode) = 
+                        aspect pfcg_auth(
+                        
+                        ZCS01PLZ05, 
+                        ZCS01PLZ05, 
+                        ACTVT = '03'
+                        );
+                        
+}

@@ -1,0 +1,13 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_CS01_CUSTMRS_05000'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_CS01_CUSTMRS_05000'
+  }
+}
+define service ZUI_ZCS01_CUSTMRS_05000_O4
+  provider contracts odata_v4_ui {
+  expose ZC_CS01_CUSTMRS_05000 as Cust_Orders_PC;
+  expose ZC_CS01_CUSTORD_05000 as Orders_PC;
+}

@@ -1,0 +1,206 @@
+@Metadata.layer: #CORE
+
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'Customerid'
+
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'Orderid'
+
+annotate view ZC_CS01_CUSTORD_05 with
+{
+  @UI.facet: [ {
+    label: 'General Information',
+    id: 'GeneralInfo',
+    purpose: #STANDARD,
+    position: 10,
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+
+
+  @UI.identification: [ {
+    position: 10,
+    label: 'Kundennummer'
+  } ]
+
+  @UI.lineItem: [ {
+    position: 10,
+    label: 'Kundennummer'
+  } ]
+
+  @UI.selectionField: [ {
+    position: 10
+  } ]
+
+  Customerid;
+
+
+  @UI.identification: [ {
+    position: 20,
+    label: 'Bestellnummer'
+  } ]
+
+  @UI.lineItem: [ {
+    position: 20,
+    label: 'Bestellnummer'
+  } ]
+
+  @UI.selectionField: [ {
+    position: 20
+  } ]
+
+  Orderid;
+
+
+  @UI.identification: [ {
+    position: 30,
+    label: 'Datum der Bestellung'
+  } ]
+
+  @UI.lineItem: [ {
+    position: 30,
+    label: 'Datum der Bestellung'
+  } ]
+
+  @UI.selectionField: [ {
+    position: 30
+  } ]
+
+  OrderDate;
+
+
+  @UI.identification: [ {
+    position: 40,
+    label: 'Summe der Bestellung'
+  } ]
+
+  @UI.lineItem: [ {
+    position: 40,
+    label: 'Summe der Bestellung'
+  } ]
+
+  @UI.selectionField: [ {
+    position: 40
+  } ]
+
+  OrderTotal;
+
+
+  @UI.hidden: true
+  Currency;
+
+
+  @UI.identification: [ {
+    position: 50,
+    label: 'Rabatt'
+  } ]
+
+  @UI.lineItem: [ {
+    position: 50,
+    label: 'Rabatt'
+  } ]
+
+  @UI.selectionField: [ {
+    position: 50
+  } ]
+
+  Discount;
+
+
+  @UI.identification: [ {
+    position: 60,
+    label: 'Info'
+  } ]
+
+  @UI.lineItem: [ {
+    position: 60,
+    label: 'Info'
+  } ]
+
+  @UI.selectionField: [ {
+    position: 60
+  } ]
+
+  Info;
+
+
+  @UI.identification: [ {
+    position: 70,
+    label: 'Status der Bestellung'
+  } ]
+
+  @UI.lineItem: [ {
+    position: 70,
+    label: 'Status der Bestellung'
+  } ]
+
+  @UI.selectionField: [ {
+    position: 70
+  } ]
+
+  Status;
+
+
+  @UI.identification: [ {
+    position: 80,
+    label: 'Zielwährung'
+  } ]
+
+  TargetCurrency;
+
+
+  @UI.identification: [ {
+    position: 90,
+    label: 'Umrechnungsdatum'
+  } ]
+
+  ChangeRateDate;
+
+
+  @UI.identification: [ {
+    position: 100,
+    label: 'Umgerechneter Betrag'
+  } ]
+
+  @UI.lineItem: [ {
+    position: 100,
+    label: 'Umgerechneter Betrag'
+  } ]
+
+  OrderTotalConverted;
+
+
+  @UI.identification: [ {
+    position: 110,
+    label: 'Created By'
+  } ]
+
+  CreatedBy;
+
+
+  @UI.identification: [ {
+    position: 120,
+    label: 'Created On'
+  } ]
+
+  CreatedAt;
+
+
+  @UI.identification: [ {
+    position: 130,
+    label: 'Changed By'
+  } ]
+
+  LocalLastChangedBy;
+
+
+  @UI.identification: [ {
+    position: 140,
+    label: 'Changed On'
+  } ]
+
+  LocalLastChangedAt;
+
+
+  @UI.hidden: true
+  LastChangedAt;
+}

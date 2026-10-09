@@ -1,0 +1,125 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'Interfacename'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'Interfacename'
+annotate view ZC_CS01_STTISTK_05 with
+{
+  @UI.facet: [ {
+    label: 'General Information', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  @EndUserText.label: 'Interfacename'
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'Interfacename'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    label: 'Interfacename'
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  Interfacename;
+  
+  @EndUserText.label: 'Classname'
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'Classname'
+  } ]
+  @UI.lineItem: [ {
+    position: 20 , 
+    label: 'Classname'
+  } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+  Classname;
+  
+  @EndUserText.label: 'Descr'
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'Descr'
+  } ]
+  @UI.lineItem: [ {
+    position: 30 , 
+    label: 'Descr'
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  Descr;
+  
+  @EndUserText.label: 'Active'
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'Active'
+  } ]
+  @UI.lineItem: [ {
+    position: 40 , 
+    label: 'Active'
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  Active;
+  
+  @UI.identification: [ {
+    position: 50 
+  } ]
+  @UI.lineItem: [ {
+    position: 50 
+  } ]
+  @UI.selectionField: [ {
+    position: 50 
+  } ]
+  LocalCreatedBy;
+  
+  @UI.identification: [ {
+    position: 60 
+  } ]
+  @UI.lineItem: [ {
+    position: 60 
+  } ]
+  @UI.selectionField: [ {
+    position: 60 
+  } ]
+  LocalCreatedAt;
+  
+  @UI.identification: [ {
+    position: 70 
+  } ]
+  @UI.lineItem: [ {
+    position: 70 
+  } ]
+  @UI.selectionField: [ {
+    position: 70 
+  } ]
+  LocalLastChangedBy;
+  
+  @UI.identification: [ {
+    position: 80 
+  } ]
+  @UI.lineItem: [ {
+    position: 80 
+  } ]
+  @UI.selectionField: [ {
+    position: 80 
+  } ]
+  LocalLastChangedAt;
+  
+  @UI.identification: [ {
+    position: 90 
+  } ]
+  @UI.lineItem: [ {
+    position: 90 
+  } ]
+  @UI.selectionField: [ {
+    position: 90 
+  } ]
+  LastChangedAt;
+}

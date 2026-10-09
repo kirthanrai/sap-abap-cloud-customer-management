@@ -1,0 +1,21 @@
+@AccessControl.authorizationCheck: #MANDATORY
+@Metadata.allowExtensions: true
+@ObjectModel.sapObjectNodeType.name: 'ZCS01_SETTIGS_05'
+@EndUserText.label: '###GENERATED Core Data Service Entity'
+define root view entity ZR_CS01_SETTIGS_05
+  as select from ZCS01_SETTIGS_05 as Settings_05
+{
+  key key_code as KeyCode,
+  value as Value,
+  active as Active,
+  @Semantics.user.createdBy: true
+  local_created_by as LocalCreatedBy,
+  @Semantics.systemDateTime.createdAt: true
+  local_created_at as LocalCreatedAt,
+  @Semantics.user.localInstanceLastChangedBy: true
+  local_last_changed_by as LocalLastChangedBy,
+  @Semantics.systemDateTime.localInstanceLastChangedAt: true
+  local_last_changed_at as LocalLastChangedAt,
+  @Semantics.systemDateTime.lastChangedAt: true
+  last_changed_at as LastChangedAt
+}

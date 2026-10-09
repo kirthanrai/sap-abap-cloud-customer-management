@@ -1,0 +1,61 @@
+managed implementation in class ZBP_R_CS01_ITEMS_05 unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_CS01_ITEMS_05 alias orderitems_05
+persistent table ZCS01_ITEMS_05
+extensible
+draft table ZCS01_ITEMS_05_D
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+{
+  field ( mandatory : create )
+   Customerid,
+   Orderid,
+   Orderitem;
+
+  field ( readonly )
+   CreatedBy,
+   CreatedAt,
+   LocalLastChangedBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+  field ( readonly : update )
+   Customerid,
+   Orderid,
+   Orderitem;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZCS01_ITEMS_05 corresponding extensible
+  {
+    Customerid = CUSTOMERID;
+    Orderid = ORDERID;
+    Orderitem = ORDERITEM;
+    Itemid = ITEMID;
+    Itemdescription = ITEMDESCRIPTION;
+    Quantity = QUANTITY;
+    Unit = UNIT;
+    Price = PRICE;
+    ItemTotal = ITEM_TOTAL;
+    Currency = CURRENCY;
+    Info = INFO;
+    CreatedBy = CREATED_BY;
+    CreatedAt = CREATED_AT;
+    LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    LastChangedAt = LAST_CHANGED_AT;
+  }
+
+}

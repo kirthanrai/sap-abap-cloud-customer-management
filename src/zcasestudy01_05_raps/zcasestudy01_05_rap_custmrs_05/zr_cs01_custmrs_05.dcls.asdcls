@@ -1,0 +1,8 @@
+@EndUserText.label: 'ZR_CS01_CUSTMRS_05'
+@MappingRole: true
+define role ZR_CS01_CUSTMRS_05 {
+  grant select on ZR_CS01_CUSTMRS_05
+  where
+//  (Postcode) = aspect pfcg_auth(ZCS01PLZ05, ZCS01PLZ05, ACTVT = '03');
+                            Postcode between '20000' AND '49999';
+}

@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_CS01_STTISTK_05'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_CS01_STTISTK_05'
+  }
+}
+define service ZUI_ZCS01_STTISTK_05_O4 provider contracts odata_v4_ui {
+  expose ZC_CS01_STTISTK_05 as Statistics_05;
+}

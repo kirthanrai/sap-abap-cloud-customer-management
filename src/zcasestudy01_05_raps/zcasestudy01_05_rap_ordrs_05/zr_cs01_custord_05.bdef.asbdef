@@ -1,0 +1,70 @@
+managed implementation in class ZBP_R_CS01_CUSTORD_05 unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_CS01_CUSTORD_05 alias Orders_05
+persistent table ZCS01_CUSTORD_05
+extensible
+draft table ZCS01_CSTRD_05_D
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+{
+  field ( mandatory : create )
+   Customerid,
+   Orderid;
+
+  field ( readonly )
+  OrderTotalConverted,
+   CreatedBy,
+   CreatedAt,
+   LocalLastChangedBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+  field ( readonly : update )
+   Customerid,
+   Orderid;
+
+
+  create;
+  update;
+  delete;
+
+  determination convertCurrency on save
+{
+  create;
+  field OrderTotal, Currency, TargetCurrency, ChangeRateDate;
+}
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+
+  draft determine action Prepare
+{
+  determination convertCurrency;
+}
+
+  mapping for ZCS01_CUSTORD_05 corresponding extensible
+  {
+    Customerid = CUSTOMERID;
+    Orderid = ORDERID;
+    OrderDate = ORDER_DATE;
+    OrderTotal = ORDER_TOTAL;
+    Discount = DISCOUNT;
+    Info = INFO;
+    Status = STATUS;
+    Currency = CURRENCY;
+    TargetCurrency = TARGET_CURRENCY;
+    ChangeRateDate = CHANGE_RATE_DATE;
+    OrderTotalConverted = ORDER_TOTAL_CONVERTED;
+    CreatedBy = CREATED_BY;
+    CreatedAt = CREATED_AT;
+    LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    LastChangedAt = LAST_CHANGED_AT;
+  }
+
+}

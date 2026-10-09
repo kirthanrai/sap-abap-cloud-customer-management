@@ -1,0 +1,118 @@
+managed implementation in class ZBP_R_CS01_CUSTMRS_PC_05 unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_CS01_CUSTMRS_PC_05 alias Cust_Orders_PC
+persistent table ZCS01_CUSTMRS_05
+extensible
+draft table ZCS01_CUSTMRS_PC
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+{
+  field ( mandatory : create )
+   Customerid;
+
+  field ( readonly )
+   CreatedBy,
+   CreatedAt,
+   LocalLastChangedBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+  field ( readonly : update )
+   Customerid;
+
+
+  create;
+  update;
+  delete;
+
+association _Orders { create; with draft; }
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZCS01_CUSTMRS_05 corresponding extensible
+  {
+    Customerid = CUSTOMERID;
+    Salutation = SALUTATION;
+    LastName = LAST_NAME;
+    FirstName = FIRST_NAME;
+    Company = COMPANY;
+    Street = STREET;
+    City = CITY;
+    Country = COUNTRY;
+    Postcode = POSTCODE;
+    AccLock = ACC_LOCK;
+    LastDate = LAST_DATE;
+    SalesVolume = SALES_VOLUME;
+    SalesVolumeTarget = SALES_VOLUME_TARGET;
+    ChangeRateDate = CHANGE_RATE_DATE;
+    Fax = FAX;
+    Phone = PHONE;
+    Email = EMAIL;
+    Url = URL;
+    Currency = CURRENCY;
+    CurrencyTarget = CURRENCY_TARGET;
+    Language = LANGUAGE;
+    Weblogin = WEBLOGIN;
+    Webpw = WEBPW;
+    Memo = MEMO;
+    CreatedBy = CREATED_BY;
+    CreatedAt = CREATED_AT;
+    LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    LastChangedAt = LAST_CHANGED_AT;
+    Zzvip = ZZVIP;
+  }
+
+}
+
+define behavior for ZR_CS01_CUSTORD_PC_05 alias Orders_PC
+persistent table ZCS01_CUSTORD_05
+extensible
+draft table ZCS01_CUSTORD_PC
+etag master LocalLastChangedAt
+lock dependent by _Customer
+authorization dependent by _Customer
+{
+  field ( readonly )
+    CreatedBy,
+    CreatedAt,
+    LocalLastChangedBy,
+    LocalLastChangedAt,
+    LastChangedAt;
+
+  field ( readonly : update )
+    Customerid,
+    Orderid;
+
+  update;
+  delete;
+
+  association _Customer { with draft; }
+
+  mapping for ZCS01_CUSTORD_05 corresponding extensible
+  {
+    Customerid         = CUSTOMERID;
+    Orderid            = ORDERID;
+    OrderDate          = ORDER_DATE;
+    OrderTotal         = ORDER_TOTAL;
+    Discount           = DISCOUNT;
+    Info               = INFO;
+    Status             = STATUS;
+    Currency           = CURRENCY;
+    TargetCurrency     = TARGET_CURRENCY;
+    ChangeRateDate     = CHANGE_RATE_DATE;
+    OrderTotalConverted = ORDER_TOTAL_CONVERTED;
+    CreatedBy          = CREATED_BY;
+    CreatedAt          = CREATED_AT;
+    LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    LastChangedAt      = LAST_CHANGED_AT;
+  }
+}

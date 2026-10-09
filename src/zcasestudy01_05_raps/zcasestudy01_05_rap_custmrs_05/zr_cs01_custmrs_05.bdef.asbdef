@@ -1,0 +1,89 @@
+managed implementation in class ZBP_R_CS01_CUSTMRS_05 unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_CS01_CUSTMRS_05 alias Customers_05
+persistent table ZCS01_CUSTMRS_05
+extensible
+draft table ZCS01_CSTMRS_0_D
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+late numbering
+{
+
+  field ( readonly )
+   Customerid,
+   CreatedBy,
+   CreatedAt,
+   LocalLastChangedBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+
+  create;
+  update;
+  delete;
+
+action cancelOrders result [1] $self;
+action showStatistic result [1] $self;
+
+ validation validateEmail on save
+{
+  create;
+  field Email;
+}
+
+determination setCity on modify
+{
+  create;
+  field Postcode;
+}
+
+
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+
+  draft determine action Prepare
+{
+  validation validateEmail;
+
+}
+
+  mapping for ZCS01_CUSTMRS_05 corresponding extensible
+  {
+    Customerid = CUSTOMERID;
+    Salutation = SALUTATION;
+    LastName = LAST_NAME;
+    FirstName = FIRST_NAME;
+    Company = COMPANY;
+    Street = STREET;
+    City = CITY;
+    Country = COUNTRY;
+    Postcode = POSTCODE;
+    AccLock = ACC_LOCK;
+    LastDate = LAST_DATE;
+    SalesVolume = SALES_VOLUME;
+    SalesVolumeTarget = SALES_VOLUME_TARGET;
+    ChangeRateDate = CHANGE_RATE_DATE;
+    Fax = FAX;
+    Phone = PHONE;
+    Email = EMAIL;
+    Url = URL;
+    Currency = CURRENCY;
+    CurrencyTarget = CURRENCY_TARGET;
+    Language = LANGUAGE;
+    Weblogin = WEBLOGIN;
+    Webpw = WEBPW;
+    Memo = MEMO;
+    CreatedBy = CREATED_BY;
+    CreatedAt = CREATED_AT;
+    LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    LastChangedAt = LAST_CHANGED_AT;
+  }
+
+}
